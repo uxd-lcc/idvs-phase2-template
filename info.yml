@@ -12,6 +12,10 @@ authors:
 
 
 meta:
+- property: title
+  content: The title of this research project
+- property: description
+  content: The description
 - property: og:title
   content: The title of this research project
 - property: og:description
