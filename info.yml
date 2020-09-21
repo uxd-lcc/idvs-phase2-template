@@ -1,0 +1,18 @@
+title: The title of this research project
+
+description: a text of 1400 chars. max
+
+cover-image: https://via.placeholder.com/1400x780.png/09f/fff?text=The+cover+image+of+your+project
+
+authors:
+- name: Paolo Ciuccarelli
+- name: Stefano Mandato
+- name: Donato Ricci
+- name: Marco Fattore
+
+
+meta:
+- property: og:title
+  content: The title of this research project
+- property: og:description
+  content: The description
