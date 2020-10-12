@@ -43,6 +43,11 @@ if (questions.size() > 0) {
     questionMeta.append('p').text(d=>d.description);
     questionMeta.append('a').attr('href',d=>`./${d.folder}`).text('Explore the research');
 
+    question.on("click", (e, d) => {
+      console.log(d)
+      window.location.href = "question-" + d.index;
+    })
+
   });
 };
 
