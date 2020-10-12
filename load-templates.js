@@ -16,24 +16,32 @@ if (questions.size() > 0) {
 
     const cover = home.selectAll('div').data([info]).enter().append('div');
 
+    cover.append("img").attr('src',d=>`./assets/${d["cover-image"]}`)
+    .classed("cover__image", true);
+    cover.append("div").classed("cover__background", true);
+    cover.append("h3").text("DensityDesign Lab - Final Synthesis Design Studio 2020/2021")
+    .classed("cover__heading", true);
     cover.append("h1").text(d => d.title)
     .classed("cover__title", true);
+    cover.append("h2").text(d => d.subtitle)
+    .classed("cover__subtitle", true);
 
     cover.append("div")
-    .classed("authors", true)
-    .selectAll("span")
+    .selectAll("p")
     .data(d => d.authors)
-    .join("span")
-    .text(d => d.name);
+    .join("p")
+    .text(d => d.name)
+    .classed("authors", true);
 
     const introText = intro.selectAll("div").data([info]).enter().append("div");
     introText.append("p").text(d => d.description);
 
-    const question = questions.selectAll('div').data(questionsData).enter().append('div');
-    question.append('h1').text(d=>d.title);
-    question.append('p').text(d=>d.description);
-    question.append('a').attr('href',d=>`./${d.folder}`).text('go to question');
+    const question = questions.selectAll('div').data(questionsData).enter().append('div').classed("question__card", true);
     question.append('img').attr('src',d=>`./${d.folder}/${d.cover}`);
+    const questionMeta = question.append("div");
+    questionMeta.append('h2').text(d=>d.title);
+    questionMeta.append('p').text(d=>d.description);
+    questionMeta.append('a').attr('href',d=>`./${d.folder}`).text('Explore the research');
 
   });
 };
