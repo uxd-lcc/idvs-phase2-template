@@ -1,10 +1,7 @@
 html {
-  --color-accent: #4cd964;
   --color-main: #007aff;
   --color-text: #333333;
-  --color-medium: #7A7974;
-  --color-light: #FBFBFD;
-  --color-lightest: #FFFFFF;
+  --color-background: #FBFBFD;
   --font-display: 'DM Sans', sans-serif;
-  --font-text: 'Crimson Pro', sans-serif;
+  --font-text: 'Crimson Pro', serif;
 }
