@@ -45,3 +45,38 @@ if (questions.size() > 0) {
 
   });
 };
+
+const questionsNavigation = d3.select("#questions-navigation");
+if (questionsNavigation.size() > 0) {
+  Promise.all([d3.text("/questions.yml")]).then(([questionsData]) => {
+    questionsNavigation.append("a").attr("href","/").text("Home")
+    questionsData = jsyaml.load(questionsData);
+    questionsNavigation
+      .append("ul")
+      .selectAll("li")
+      .data(questionsData)
+      .join("li")
+      .append("a")
+      .attr("href", (d) => "/" + d.folder)
+      .text((d) => d.title);
+  });
+}
+
+const datasetsContainer = d3.select("#datasets-container");
+if (datasetsContainer.size() > 0) {
+  Promise.all([d3.text("/questions.yml")]).then(([questionsData]) => {
+    questionsData = jsyaml.load(questionsData);
+    const pathName = window.location.pathname.replace(/\//g, "");
+    const datasetsData = questionsData.find((d) => d.folder === pathName)
+      .datasets;
+
+    let datasets = datasetsContainer
+      .append("ul")
+      .selectAll("li")
+      .data(datasetsData)
+      .join("li");
+
+    datasets.append("span").append('a').attr('href',d=>d.src).attr('download',d=>d.src).text((d) => d.name);
+    datasets.append("span").text((d) => d.description);
+  });
+}
