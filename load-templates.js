@@ -52,7 +52,7 @@ if (questions.size() > 0) {
 
 const questionsNavigation = d3.select("#questions-navigation");
 if (questionsNavigation.size() > 0) {
-  Promise.all([d3.text("questions.yml")]).then(([questionsData]) => {
+  Promise.all([d3.text("./questions.yml")]).then(([questionsData]) => {
     questionsNavigation.append("a").attr("href","/").text("Home");
 
     const questionsList = questionsNavigation.append("div").classed("questions--list", true);
@@ -82,7 +82,7 @@ if (questionsNavigation.size() > 0) {
 
 const datasetsContainer = d3.select("#datasets-container");
 if (datasetsContainer.size() > 0) {
-  Promise.all([d3.text("questions.yml")]).then(([questionsData]) => {
+  Promise.all([d3.text("./questions.yml")]).then(([questionsData]) => {
     questionsData = jsyaml.load(questionsData);
     const pathName = window.location.pathname.replace(/\//g, "");
     const datasetsData = questionsData.find((d) => d.folder === pathName)
