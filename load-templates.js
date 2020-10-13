@@ -16,7 +16,7 @@ if (questions.size() > 0) {
 
     const cover = home.selectAll('div').data([info]).enter().append('div');
 
-    cover.append("img").attr('src',d=>`./assets/${d["cover-image"]}`)
+    cover.append("div").attr('style',d=>`background-image: url(./assets/${d["cover-image"]})`)
     .classed("cover__image", true);
     cover.append("div").classed("cover__background", true);
     cover.append("h3").text("DensityDesign Lab - Final Synthesis Design Studio 2020/2021")
@@ -41,7 +41,6 @@ if (questions.size() > 0) {
     const questionMeta = question.append("div");
     questionMeta.append('h2').text(d=>d.title);
     questionMeta.append('p').text(d=>d.description);
-    questionMeta.append('a').attr('href',d=>`./${d.folder}`).text('Explore the research');
 
     question.on("click", (e, d) => {
       console.log(d)
@@ -54,16 +53,30 @@ if (questions.size() > 0) {
 const questionsNavigation = d3.select("#questions-navigation");
 if (questionsNavigation.size() > 0) {
   Promise.all([d3.text("/questions.yml")]).then(([questionsData]) => {
-    questionsNavigation.append("a").attr("href","/").text("Home")
+    questionsNavigation.append("a").attr("href","/").text("Home");
+
+    const questionsList = questionsNavigation.append("div").classed("questions--list", true);
+
+    let questionsDropdown = questionsList
+      .append("a")
+      .text("Research questions");
+
     questionsData = jsyaml.load(questionsData);
-    questionsNavigation
+    questionsList
       .append("ul")
+      .classed("open", false)
       .selectAll("li")
       .data(questionsData)
       .join("li")
       .append("a")
       .attr("href", (d) => "/" + d.folder)
       .text((d) => d.title);
+
+    questionsDropdown.on("click", () => {
+      d3.select(".questions--list ul").classed("open", () => {
+        d3.select(".questions--list ul").classed("open", true) ? d3.select(".questions--list ul").classed("open", false) : d3.select(".questions--list ul").classed("open", true)
+      });
+    })
   });
 }
 
