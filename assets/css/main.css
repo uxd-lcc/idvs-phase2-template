@@ -241,10 +241,12 @@ main.container * {
   bottom:0;
   height: auto;
   margin-top:2rem;
+  padding: 3rem 0 3rem 0;
 }
 
 .footer p{
-    font-size: 1rem;
+    font-size: 0.8rem;
+    line-height: 0.8rem;
     color: var(--color-text);
 }
 
@@ -254,34 +256,33 @@ main.container * {
     color: var(--color-background);
 }
 
-.footer img{
-  width:100%;
-}
 
 .footer__container{
   display: grid;
-  column-gap: 1rem;
   grid-template-columns: repeat(12, 1fr);
+  align-items:flex-start;
+  column-gap: 1rem;
 }
 
 .footer__logo1{
   display: grid;
-  grid-column: 1 / span 1;
+  grid-column: 3 / span 1;
+  width:50%;
 }
 
 .footer__logo2{
   display: grid;
-  grid-column: 2 / span 1;
+  grid-column: 4 / span 1;
 }
 
 .footer__authors{
   display: grid;
-  grid-column: 4 / span 2;
+  grid-column: 6 / span 2;
 }
 
 .footer__faculty{
   display: grid;
-  grid-column: 7 / span 2;
+  grid-column: 8 / span 2;
 }
 
 .footer__ass{

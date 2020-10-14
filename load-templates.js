@@ -120,17 +120,23 @@ if (footer.size() > 0) {
       footerContainer.append("img").attr('src', d => `/assets/${d.logoDensity}`).classed("footer__logo1", true);
       footerContainer.append("img").attr('src', d => `/assets/${d.logoPoli}`).classed("footer__logo2", true);
 
-      footerContainer.append("div").classed("footer__authors", true)
+      footerContainer.append("div")
+      .classed("footer__authors", true)
+      .text("Project")
         .selectAll("p")
         .data(d => d.authors)
         .join("p")
         .text(d => d.name);
-      footerContainer.append("div").classed("footer__faculty", true)
+      footerContainer.append("div")
+      .classed("footer__faculty", true)
+      .text("Faculty")
         .selectAll("p")
         .data(d => d.faculty)
         .join("p")
         .text(d => d.name);
-      footerContainer.append("div").classed("footer__ass", true)
+      footerContainer.append("div")
+      .classed("footer__ass", true)
+      .text("Assitants")
         .selectAll("p")
         .data(d => d.assistants)
         .join("p")
