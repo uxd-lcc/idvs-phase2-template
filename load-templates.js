@@ -59,8 +59,9 @@ if (questionsNavigation.size() > 0) {
 
     questionsNavigation
       .append("a")
-      .append("h4")
+      .style("padding", "0 1rem")
       .attr("href", "/")
+      .append("h4")
       .text("Home");
 
     const questionsList = questionsNavigation.append("div").classed("questions--list", true);
@@ -69,7 +70,8 @@ if (questionsNavigation.size() > 0) {
       .append("h4")
       .classed('navigation-handler', true)
       .style('cursor','pointer')
-      .text("Research questions");
+      .text("Research questions")
+      .append("div");
     
     questionsList
       .append("ol")

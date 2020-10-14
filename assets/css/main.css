@@ -217,21 +217,34 @@ main.container > * {
   grid-template-columns: repeat(6, calc(100vw / 6));
 }
 
-#questions-navigation * {
+#questions-navigation h4 {
   margin: 0;
+}
+
+#questions-navigation * {
   color: var(--color-background) !important;
 }
 
 .navigation-handler > div {
-  background-color: aqua;
+  /* background-color: aqua; */
+  display: inline-block;
+  position: relative;
+  margin-left: 1rem;
 }
 
-.navigation-handler > div::before {
+.navigation-handler > div::before, .navigation-handler > div::after {
   content: " ";
-  width: 1rem;
-  height: 1px;
+  width: 10px;
+  height: 2px;
   display: block;
   background-color: var(--color-background);
+  transform: rotate(45deg);
+  position: absolute;
+  bottom: 5px;
+}
+.navigation-handler > div::after {
+  transform: rotate(-45deg);
+  left: 6px;
 }
 
 #questions-navigation .questions--list {
@@ -244,6 +257,7 @@ main.container > * {
   height: auto;
   padding-top: 1rem;
   padding-left: 3rem;
+  margin: 0;
   opacity: 1;
 }
 
