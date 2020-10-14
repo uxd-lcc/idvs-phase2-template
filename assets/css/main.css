@@ -236,33 +236,42 @@ main.container * {
 
 /* Footer */
 
-footer{
+.footer{
   background-color: var(--color-main);
   bottom:0;
   height: auto;
+  margin-top:2rem;
 }
 
-footer p{
+.footer p{
     font-size: 1rem;
     color: var(--color-background);
 }
 
-footer h4{
+.footer h4{
     font-size: 1rem;
     text-transform: uppercase;
     color: var(--color-background);
 }
 
+.footer img{
+  width:100%;
+}
+
 .footer__container{
   display: grid;
-  column-gap: 2rem;
+  column-gap: 1rem;
   grid-template-columns: repeat(12, 1fr);
 }
 
-.footer__logo{
+.footer__logo1{
   display: grid;
-  grid-column: 1 / span 3;
+  grid-column: 1 / span 1;
+}
 
+.footer__logo2{
+  display: grid;
+  grid-column: 2 / span 1;
 }
 
 .footer__authors{
