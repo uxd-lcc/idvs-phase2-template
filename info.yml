@@ -10,7 +10,6 @@ logoPoli: logo_poli.png
 logoDensity: logo_density.png
 
 authors:
-- title: Authors
 - name: Paolo Ciuccarelli
 - name: Stefano Mandato
 - name: Donato Ricci
@@ -19,7 +18,6 @@ authors:
 - name: Michele Invernizzi
 
 faculty:
-- title: Faculty
 - name: Michele Mauri
 - name: Gabriele Colombo
 - name: Angeles Briones
@@ -27,7 +25,6 @@ faculty:
 - name: Salvatore Zingale
 
 assistants:
-- title: Assistants
 - name: Antonella Autuori
 - name: Andrea Benedetti
 - name: Matteo Bettini
