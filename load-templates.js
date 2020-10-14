@@ -3,7 +3,7 @@ const nav = d3.select("#questions-navigation");
 const home = d3.select(".cover");
 const intro = d3.select(".intro");
 const questions = d3.select('#questions');
-const footer = d3.select("footer");
+const footer = d3.select('.footer');
 
 if (questions.size() > 0) {
   Promise.all([
@@ -16,7 +16,7 @@ if (questions.size() > 0) {
 
     const cover = home.selectAll('div').data([info]).enter().append('div');
 
-    cover.append("div").attr('style',d=>`background-image: url(./assets/${d["cover-image"]})`)
+    cover.append("img").attr('style',d=>`background-image: url(./assets/${d["cover-image"]})`)
     .classed("cover__image", true);
     cover.append("div").classed("cover__background", true);
     cover.append("h3").text("DensityDesign Lab - Final Synthesis Design Studio 2020/2021")
@@ -36,9 +36,34 @@ if (questions.size() > 0) {
     const introText = intro.selectAll("div").data([info]).enter().append("div");
     introText.append("p").text(d => d.description);
 
+// Footer //
+
+    const footerContainer = footer.selectAll("div").data([info]).enter().append("div")
+    .classed("footer__container", true);
+
+    footerContainer.append("div").attr('src',d=>`../assets/${d["logo-density"]})`)
+    .classed("footer__logo", true);
+
+    footerContainer.append("div").classed("footer__authors", true)
+    .selectAll("p")
+    .data(d => d.authors)
+    .join("p")
+    .text(d => d.name);
+    footerContainer.append("div").classed("footer__faculty", true)
+    .selectAll("p")
+    .data(d => d.faculty)
+    .join("p")
+    .text(d => d.name);
+    footerContainer.append("div").classed("footer__ass", true)
+    .selectAll("p")
+    .data(d => d.assistants)
+    .join("p")
+    .text(d => d.name);
+
+
     const question =
     questions.selectAll('div').data(questionsData).enter().append('div').classed("question", true);
-    question.append('h2').text(d=>d.title).classed("question__title", true);
+    question.append('h2').text(d=>d.title).classed("question__info", true);
     question.append('img').attr('src',d=>`./${d.folder}/${d.cover}`).classed("question__card", true);
     const questionMeta = question.append("div").classed("question__info", true);
     questionMeta.append('p').text(d=>d.description);
