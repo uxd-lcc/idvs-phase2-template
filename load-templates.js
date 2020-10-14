@@ -101,9 +101,10 @@ if (datasetsContainer.size() > 0) {
 
     let datasets = datasetsContainer
       .append("ul")
-      .selectAll("li")
-      .data(datasetsData)
-      .join("li");
+        .classed("datasets", true)
+        .selectAll("li")
+        .data(datasetsData)
+        .join("li");
 
     datasets.append("span").append('a').attr('href', d => d.src).attr('download', d => d.src).text((d) => d.name);
     datasets.append("span").text((d) => d.description);
