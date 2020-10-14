@@ -237,7 +237,7 @@ main.container * {
 /* Footer */
 
 .footer{
-  background-color: var(--color-main);
+  background-color: var(--color-background);
   bottom:0;
   height: auto;
   margin-top:2rem;
@@ -245,7 +245,7 @@ main.container * {
 
 .footer p{
     font-size: 1rem;
-    color: var(--color-background);
+    color: var(--color-text);
 }
 
 .footer h4{
