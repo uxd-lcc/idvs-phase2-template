@@ -29,6 +29,7 @@ a, a:visited {
 
 p {
   font-size: 1.5rem;
+  margin-block-start: 0em;
 }
 
 img {
@@ -117,13 +118,38 @@ main.container * {
   text-indent: 1.2rem;
 }
 
-#questions .question__card {
+
+#questions {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-column-gap: 2rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+#questions .question {
+  display: grid;
   margin-bottom: 4rem;
   transition: 0.3s ease opacity;
+  column-gap: 2rem;
+  border:1px solid var(--color-main);
+  border-radius:1rem;
+  padding:2rem;
 }
+
+#questions .question__title {
+    grid-column: 1 / span 4;
+    display: grid;
+}
+
+#questions .question__card {
+    grid-column: 1 / span 2;
+    display: grid;
+}
+
+#questions .question__info {
+    grid-column: 3 / span 1;
+    display: grid;
+    top:0;
+}
+
 
 #questions .question__card:hover {
   cursor: pointer;
@@ -132,7 +158,7 @@ main.container * {
 
 /* Question */
 
-.intro-text {
+#question-container .intro-text {
   font-size: 2rem;
 }
 
@@ -161,42 +187,50 @@ main.container * {
 
 /* Navigation */
 
-header#questions-navigation {
+#questions-navigation {
   position: sticky;
+  padding:1rem 0 1rem 0;
   top: 0;
-  padding: 1rem;
   display: flex;
+  color:var(--color-background);
+  background-color: var(--color-main);
+  z-index:999;
 }
 
-header#questions-navigation * {
-  margin: 0 1rem 0 0;
+#questions-navigation * {
+  margin: 0;
 }
 
-header#questions-navigation a {
-  background: var(--color-background);
-  padding: 0.5rem 1.5rem;
-  border-radius: 4rem;
+#questions-navigation a {
+  padding: 0 3rem 0 3rem;
   font-family: var(--font-display);
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 1rem;
-  color: var(--color-text);
-  border: 1px solid var(--color-main);
+  color:var(--color-background);
+  text-align:left;
+
 }
 
-header#questions-navigation .questions--list {
+#questions-navigation .questions--list {
   width: 50vw;
+  border:none;
 }
 
-header#questions-navigation .questions--list ul {
+#questions-navigation .questions--list ul {
+  display: none;
+  list-style: none;
+}
+
+#questions-navigation .questions--list li {
+  margin: 1rem 0 1rem 0;
+}
+
+#questions-navigation .questions--list .closed {
   display: none;
 }
 
-header#questions-navigation .closed {
-  display: none;
-}
-
-header#questions-navigation .open {
+#questions-navigation .questions--list .open {
   display: block;
 }
 

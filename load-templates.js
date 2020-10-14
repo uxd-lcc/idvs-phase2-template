@@ -1,5 +1,5 @@
 // This script generates HTML nodes for the home page of the project
-const nav = d3.select("#nav");
+const nav = d3.select("#questions-navigation");
 const home = d3.select(".cover");
 const intro = d3.select(".intro");
 const questions = d3.select('#questions');
@@ -36,10 +36,11 @@ if (questions.size() > 0) {
     const introText = intro.selectAll("div").data([info]).enter().append("div");
     introText.append("p").text(d => d.description);
 
-    const question = questions.selectAll('div').data(questionsData).enter().append('div').classed("question__card", true);
-    question.append('img').attr('src',d=>`./${d.folder}/${d.cover}`);
-    const questionMeta = question.append("div");
-    questionMeta.append('h2').text(d=>d.title);
+    const question =
+    questions.selectAll('div').data(questionsData).enter().append('div').classed("question", true);
+    question.append('h2').text(d=>d.title).classed("question__title", true);
+    question.append('img').attr('src',d=>`./${d.folder}/${d.cover}`).classed("question__card", true);
+    const questionMeta = question.append("div").classed("question__info", true);
     questionMeta.append('p').text(d=>d.description);
 
     question.on("click", (e, d) => {
@@ -53,7 +54,10 @@ if (questions.size() > 0) {
 const questionsNavigation = d3.select("#questions-navigation");
 if (questionsNavigation.size() > 0) {
   Promise.all([d3.text("./questions.yml")]).then(([questionsData]) => {
-    questionsNavigation.append("a").attr("href","/").text("Home");
+    questionsNavigation
+    .append("a")
+    .attr("href","/")
+    .text("Home");
 
     const questionsList = questionsNavigation.append("div").classed("questions--list", true);
 
@@ -64,7 +68,7 @@ if (questionsNavigation.size() > 0) {
     questionsData = jsyaml.load(questionsData);
     questionsList
       .append("ul")
-      .classed("open", false)
+      .classed("open", true)
       .selectAll("li")
       .data(questionsData)
       .join("li")
@@ -74,7 +78,8 @@ if (questionsNavigation.size() > 0) {
 
     questionsDropdown.on("click", () => {
       d3.select(".questions--list ul").classed("open", () => {
-        d3.select(".questions--list ul").classed("open", true) ? d3.select(".questions--list ul").classed("open", false) : d3.select(".questions--list ul").classed("open", true)
+       d3.select(".questions--list ul").classed("open", false) ? d3.select(".questions--list ul").classed("open", true) : d3.select(".questions--list ul")
+       .classed("open", true)
       });
     })
   });
