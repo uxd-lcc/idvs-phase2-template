@@ -55,34 +55,39 @@ if (questionsNavigation.size() > 0) {
   console.log('question navigator')
 
   Promise.all([d3.text("/questions.yml")]).then(([questionsData]) => {
+    questionsData = jsyaml.load(questionsData);
+
     questionsNavigation
       .append("a")
+      .append("h4")
       .attr("href", "/")
       .text("Home");
 
     const questionsList = questionsNavigation.append("div").classed("questions--list", true);
 
     let questionsDropdown = questionsList
-      .append("a")
+      .append("h4")
+      .classed('navigation-handler', true)
+      .style('cursor','pointer')
       .text("Research questions");
-
-    questionsData = jsyaml.load(questionsData);
+    
     questionsList
-      .append("ul")
-      .classed("open", true)
+      .append("ol")
+      .classed("closed", true)
+      .style("height", "calc(1rem + " + questionsData.length * 20 + "px)")
       .selectAll("li")
       .data(questionsData)
       .join("li")
       .append("a")
       .attr("href", (d) => "/" + d.folder)
-      .text((d) => d.title);
-
-    questionsDropdown.on("click", () => {
-      d3.select(".questions--list ul").classed("open", () => {
-        d3.select(".questions--list ul").classed("open", false) ? d3.select(".questions--list ul").classed("open", true) : d3.select(".questions--list ul")
-          .classed("open", true)
+      .text((d) => d.title)
+      
+    questionsList.select('.navigation-handler').on('click', function(){
+        console.log('click')
+        const list = questionsList.select('ol')
+        const isOpen = list.classed('closed');
+        list.classed('closed', !isOpen);
       });
-    })
   });
 }
 
