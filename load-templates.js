@@ -37,7 +37,7 @@ if (questions.size() > 0) {
 
       const question =
         questions.selectAll('div').data(questionsData).enter().append('div').classed("question__card", true);
-      question.append('h2').text(d => d.title).classed("question__title", true);
+      question.append('h2').text(d => d.index + ". " + d.title).classed("question__title", true);
       question.append('img').attr('src', d => `./${d.folder}/${d.cover}`);
       const questionMeta = question.append("div").classed("question__info", true);
       questionMeta.append('p').text(d => d.description);
