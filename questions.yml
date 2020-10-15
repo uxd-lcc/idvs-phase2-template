@@ -1,11 +1,11 @@
 - index: 1
-  title: How many times do we move forward?
-  description: Use this text, in no more than 400 characters, to give context to the research question. Sometimes it’s useful to start from a known claim (from news articles) about the topic. What is known about this subject and what do you aim to add with your research protocol?
+  title: Among the top 100 results of Google.it and Google.com, which are the topics related to fake images phenomenon?
+  description: In order to define the type of information that a person can find when he gets in touch with the phenomenon of fake images and wants to go deeper in the knowledge of it, it is necessary to examine the ecosystem in which they spread. The aim of this micro and macro scaled analysis is to understand what issues are actually associated to the query and if the approach in the digital world is critical or purely informative.
   cover: cover.png
   folder: question-1
   datasets:
     - name: Wikipedia
-      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
       src: magic-data.csv
       size: 0.0 KB
       format: .csv
