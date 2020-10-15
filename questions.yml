@@ -4,11 +4,11 @@
   cover: cover.png
   folder: question-1
   datasets:
-    - name: dataset magico
-      description: this dataset is so incredible, it is RED
+    - name: Wikipedia
+      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
       src: magic-data.csv
-    - name: dataset brutto
-      description: this dataset is so ugly, it is PURPLE
+    - name: Google News
+      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
       src: ugly-data.csv
 
 - index: 2

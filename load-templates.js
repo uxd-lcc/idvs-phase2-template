@@ -15,7 +15,7 @@ if (questions.size() > 0) {
 
       const cover = home.selectAll('div').data([info]).enter().append('div');
 
-      cover.append("img").attr('style', d => `background-image: url(./assets/${d["cover-image"]})`)
+      cover.append("div").attr('style', d => `background-image: url(./assets/${d["cover-image"]})`)
         .classed("cover__image", true);
       cover.append("div").classed("cover__background", true);
       cover.append("h3").text("DensityDesign Lab - Final Synthesis Design Studio 2020/2021")
@@ -72,7 +72,7 @@ if (questionsNavigation.size() > 0) {
       .style('cursor','pointer')
       .text("Research questions")
       .append("div");
-    
+
     questionsList
       .append("ol")
       .classed("closed", true)
@@ -83,7 +83,7 @@ if (questionsNavigation.size() > 0) {
       .append("a")
       .attr("href", (d) => "/" + d.folder)
       .text((d) => d.title)
-      
+
     questionsList.select('.navigation-handler').on('click', function(){
         console.log('click')
         const list = questionsList.select('ol')
@@ -130,6 +130,7 @@ if (footer.size() > 0) {
 
       footerContainer.append("div")
       .classed("footer__authors", true)
+      .append("h3")
       .text("Project")
         .selectAll("p")
         .data(d => d.authors)
@@ -137,6 +138,7 @@ if (footer.size() > 0) {
         .text(d => d.name);
       footerContainer.append("div")
       .classed("footer__faculty", true)
+      .append("h3")
       .text("Faculty")
         .selectAll("p")
         .data(d => d.faculty)
@@ -144,6 +146,7 @@ if (footer.size() > 0) {
         .text(d => d.name);
       footerContainer.append("div")
       .classed("footer__ass", true)
+      .append("h3")
       .text("Assitants")
         .selectAll("p")
         .data(d => d.assistants)
