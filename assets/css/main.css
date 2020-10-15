@@ -56,6 +56,7 @@ main.container {
   display: grid;
   grid-template-columns: repeat(6, calc(100vw / 6));
   margin: auto;
+  grid-column-gap: 1.4rem;
 }
 
 main.container > * {
@@ -139,14 +140,22 @@ main.container > * {
   grid-template-columns: repeat(1, 1fr);
 }
 
-#questions .question {
+#questions .question__card {
+  background: var(--color-cards);
   display: grid;
+  grid-template-columns: repeat(2, 50%);
   margin-bottom: 4rem;
   transition: 0.3s ease opacity;
-  column-gap: 2rem;
+  column-gap: 1.5rem;
   border: 1px solid var(--color-main);
   border-radius: 1rem;
-  padding: 2rem;
+  padding: 1.5rem;
+}
+
+#questions .question__card h2 {
+  margin: 0 0 2rem 0;
+  color: var(--color-main);
+  text-transform: none;
 }
 
 #questions .question__title {
@@ -154,13 +163,8 @@ main.container > * {
   display: grid;
 }
 
-#questions .question__card {
-  grid-column: 1 / span 2;
-  display: grid;
-}
-
 #questions .question__info {
-  grid-column: 3 / span 1;
+  grid-column: 2 / span 1;
   display: grid;
   top: 0;
 }
@@ -239,7 +243,7 @@ main.container > * {
 
 #questions-navigation {
   position: sticky;
-  padding: 1.5rem 0 1.5rem 0;
+  padding: 1.2rem 0 1.2rem 0;
   font-size: 1rem;
   top: -0.5;
   color: var(--color-background);
