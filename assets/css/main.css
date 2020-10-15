@@ -1,3 +1,12 @@
+html {
+  --color-main: #007aff;
+  --color-text: #333333;
+  --color-text-lighter: #DDDDDD;
+  --color-background: #fbfbfd;
+  --font-display: "DM Sans", sans-serif;
+  --font-text: "Crimson Pro", serif;
+}
+
 body {
   font-family: var(--font-text);
   font-size: 1rem;
@@ -190,7 +199,8 @@ main.container > * {
   margin-bottom: 3rem;
 }
 
-#question-container h2, h2 {
+#question-container h2,
+h2 {
   text-transform: uppercase;
   color: var(--color-text);
   font-size: 1.8rem;
@@ -225,7 +235,28 @@ main.container > * {
 .datasets li {
   list-style: none;
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 0.5rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--color-text-lighter);
+}
+
+.datasets li:last-of-type {
+  border-bottom: none;
+}
+
+.datasets li p {
+  margin: 0;
+}
+
+.dataset-download a {
+  display: block;
+}
+.dataset-download a.info {
+  display: block;
+  opacity: 0.75;
+  color: var(--color-text);
+  font-size: 0.75rem;
 }
 
 /* Navigation */
@@ -258,7 +289,8 @@ main.container > * {
   margin-left: 1rem;
 }
 
-.navigation-handler > div::before, .navigation-handler > div::after {
+.navigation-handler > div::before,
+.navigation-handler > div::after {
   content: " ";
   width: 10px;
   height: 2px;
@@ -310,61 +342,29 @@ main.container > * {
   background-color: var(--color-background);
   bottom: 0;
   height: auto;
-  margin-top:2rem;
+  margin-top: 2rem;
   padding: 3rem 0 3rem 0;
 }
 
-.footer p{
-    font-size: 0.8rem;
-    line-height: 0.8rem;
-    color: var(--color-text);
+.footer p {
+  font-size: 0.8rem;
+  line-height: 0.8rem;
+  color: var(--color-text);
 }
-
-.footer h4 {
-  font-size: 1rem;
-  text-transform: uppercase;
-  color: var(--color-background);
-}
-
 
 .footer__container {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  align-items:flex-start;
-  column-gap: 1rem;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap:1rem;
 }
 
-.footer__logo1 {
-  display: grid;
-  grid-column: 3 / span 1;
-  height: 90px;
-  width: auto;
-}
-
-.footer__logo2 {
-  display: grid;
-  height: 90px;
-  width: auto !important;
-  grid-column: 4 / span 1;
-}
-
-.footer__authors {
-  display: grid;
-  grid-column: 6 / span 2;
-}
-
-.footer__faculty {
-  display: grid;
-  grid-column: 8 / span 2;
-}
-
-.footer__ass {
-  display: grid;
-  grid-column: 10 / span 2;
-}
-
-.footer__title {
-  margin-bottom: 1rem;
+.footer__item .logo {
+  background-size: contain;
+    background-position: top left;
+    background-repeat: no-repeat;
+    display: block;
+    width: 100%;
+    height: 90px;
 }
 
 @media (max-width: 812px) {
