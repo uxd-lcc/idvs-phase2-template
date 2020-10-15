@@ -1,6 +1,7 @@
 html {
   --color-main: #007aff;
   --color-text: #333333;
+  --color-text-lighter: #DDDDDD;
   --color-background: #fbfbfd;
   --font-display: "DM Sans", sans-serif;
   --font-text: "Crimson Pro", serif;
@@ -237,8 +238,12 @@ h2 {
   list-style: none;
   display: grid;
   grid-template-columns: 3fr 7fr 2fr;
-  border-top: 1px solid;
   padding: 0.5rem;
+  border-bottom: 1px solid var(--color-text-lighter);
+}
+
+.datasets li:last-of-type {
+  border-bottom: none;
 }
 
 .datasets li p {
