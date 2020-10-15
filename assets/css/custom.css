@@ -1,9 +1,9 @@
 html {
-  --color-main: #403eff;
-  --color-main-lighter: #C3C2FF;
+  --color-main: #8800ff;
+  --color-main-lighter: #ca8dff;
   --color-text: #333333;
   --color-text-lighter: #AAAAAA;
-  --color-background: #FBFBFD;
+  --color-background: #efefef;
   --font-display: 'Commissioner', sans-serif;
   --font-text: 'Commissioner', sans-serif;
 }
