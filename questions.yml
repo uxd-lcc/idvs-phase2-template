@@ -7,19 +7,10 @@
     - name: Wikipedia
       description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
       src: magic-data.csv
+      size: 0.0 KB
+      format: .csv
     - name: Google News
       description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
       src: ugly-data.csv
-
-- index: 2
-  title: How beautiful is today?
-  description: Use this text, in no more than 400 characters, to give context to the research question. Sometimes it’s useful to start from a known claim (from news articles) about the topic. What is known about this subject and what do you aim to add with your research protocol?
-  cover: cover.png
-  folder: question-2
-  datasets:
-    - name: dataset magico
-      description: this dataset is so incredible, it is RED
-      src: magic-data.csv
-    - name: dataset brutto
-      description: this dataset is so ugly, it is PURPLE
-      src: ugly-data.csv
+      size: 0.0 KB
+      format: .csv
