@@ -14,3 +14,19 @@
       src: ugly-data.csv
       size: 0.0 KB
       format: .csv
+- index: 2
+  title: Debunked images of the last 6 years debunked on Google.com
+  description: Given the great media resonance and wide audience they reach, relevant events are more likely to generate both positive debate and opportunities for falsification. In this scenario, it is interesting to highlight the possible creation and dissemination of visual misinformation about an event and the response to it, which is translated into the number of sites that declare an image false. At the same time, the aim is to study whether the awareness of the phenomenon has increased over time and whether specific types of events are more subject to debunking.
+  folder: question-2
+  cover: cover.png
+  datasets:
+    - name: Wikipedia
+      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dataset retrieved on 01/02/2003. 
+      src: magic-data.csv
+      size: 0.0 KB
+      format: .csv
+    - name: Google News
+      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dataset retrieved on 01/02/2003.
+      src: ugly-data.csv
+      size: 0.0 KB
+      format: .csv

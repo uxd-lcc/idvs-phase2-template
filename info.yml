@@ -1,33 +1,33 @@
 # insert here genreal information about your project website
 
-title: An Exhaustive Title that Encapsulates your Research
+title: I see it, therefore I believe it
 subtitle: A longer subtitle that better explains and contextualises your research project
 
-description: "This text is the introductory text of your interactive research report, the final output of the second phase. In no more than 1400 characters, (please, use only text and do not add images here) you should provide a framing of the chosen topic, and its problematic social implications In addition, in this text, you have to justify the main title, briefly explaining how answering to different research questions by means of data visualisation have led to show one or more aspects of the chosen macro topic. Moreover, explain why is it interesting to study your topic in the way you did. You can include open questions and expected findings."
+description: This text is the introductory text of your interactive research report, the final output of the second phase. In no more than 1400 characters, (please, use only text and do not add images here) you should provide a framing of the chosen topic, and its problematic social implications In addition, in this text, you have to justify the main title, briefly explaining how answering to different research questions by means of data visualisation have led to show one or more aspects of the chosen macro topic. Moreover, explain why is it interesting to study your topic in the way you did. You can include open questions and expected findings.
 
 cover-image: cover.png
 logoPoli: logo_poli.png
 logoDensity: logo_density.png
 
 authors:
-- name: Paolo Ciuccarelli
-- name: Stefano Mandato
-- name: Donato Ricci
-- name: Marco Fattore
-- name: Azzurra Pini
-- name: Michele Invernizzi
+  - name: Paolo Ciuccarelli
+  - name: Stefano Mandato
+  - name: Donato Ricci
+  - name: Marco Fattore
+  - name: Azzurra Pini
+  - name: Michele Invernizzi
 
 faculty:
-- name: Michele Mauri
-- name: Gabriele Colombo
-- name: Angeles Briones
-- name: Simone Vantini
-- name: Salvatore Zingale
+  - name: Michele Mauri
+  - name: Gabriele Colombo
+  - name: Angeles Briones
+  - name: Simone Vantini
+  - name: Salvatore Zingale
 
 assistants:
-- name: Antonella Autuori
-- name: Andrea Benedetti
-- name: Matteo Bettini
-- name: Tommaso Elli
-- name: Andrea Febres
-- name: Beatrice Gobbo
+  - name: Antonella Autuori
+  - name: Andrea Benedetti
+  - name: Matteo Bettini
+  - name: Tommaso Elli
+  - name: Andrea Febres
+  - name: Beatrice Gobbo
