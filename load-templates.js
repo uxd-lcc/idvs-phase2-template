@@ -69,7 +69,7 @@ if (questionsNavigation.size() > 0) {
     let questionsDropdown = questionsList
       .append("h4")
       .classed('navigation-handler', true)
-      .style('cursor','pointer')
+      .style('cursor', 'pointer')
       .text("Research questions")
       .append("div");
 
@@ -84,12 +84,12 @@ if (questionsNavigation.size() > 0) {
       .attr("href", (d) => "/" + d.folder)
       .text((d) => d.title)
 
-    questionsList.select('.navigation-handler').on('click', function(){
-        console.log('click')
-        const list = questionsList.select('ol')
-        const isOpen = list.classed('closed');
-        list.classed('closed', !isOpen);
-      });
+    questionsList.select('.navigation-handler').on('click', function() {
+      console.log('click')
+      const list = questionsList.select('ol')
+      const isOpen = list.classed('closed');
+      list.classed('closed', !isOpen);
+    });
   });
 }
 
@@ -103,10 +103,10 @@ if (datasetsContainer.size() > 0) {
 
     let datasets = datasetsContainer
       .append("ul")
-        .classed("datasets", true)
-        .selectAll("li")
-        .data(datasetsData)
-        .join("li");
+      .classed("datasets", true)
+      .selectAll("li")
+      .data(datasetsData)
+      .join("li");
 
     datasets.append("span").append('a').attr('href', d => d.src).attr('download', d => d.src).text((d) => d.name);
     datasets.append("span").text((d) => d.description);
@@ -122,34 +122,64 @@ if (footer.size() > 0) {
     ])
     .then(([info]) => {
       info = jsyaml.load(info);
-      const footerContainer = footer.selectAll("div").data([info]).enter().append("div")
+      const footerContainer = footer
+        .append("div")
         .classed("footer__container", true);
 
-      footerContainer.append("img").attr('src', d => `/assets/${d.logoDensity}`).classed("footer__logo1", true);
-      footerContainer.append("img").attr('src', d => `/assets/${d.logoPoli}`).classed("footer__logo2", true);
+      const footerLogo1 = footerContainer
+        .append("div")
+        .classed("footer__item", true)
+        .append("div")
+        .classed("logo", true)
+        .style("background-image", `url(/assets/${info.logoDensity})`);
 
-      footerContainer.append("div")
-      .classed("footer__authors", true)
-      .append("h3")
-      .text("Project")
+      const footerLogo2 = footerContainer
+        .append("div")
+        .classed("footer__item", true)
+        .append("div")
+        .classed("logo", true)
+        .style("background-image", `url(/assets/${info.logoPoli})`);
+
+      const footerAuthors = footerContainer
+        .append("div")
+        .classed("footer__item", true);
+
+      footerAuthors
+        .append("h5")
+        .text("Project by");
+
+      footerAuthors
         .selectAll("p")
-        .data(d => d.authors)
+        .data(info.authors)
         .join("p")
         .text(d => d.name);
-      footerContainer.append("div")
-      .classed("footer__faculty", true)
-      .append("h3")
-      .text("Faculty")
+
+
+      const footerFaculty = footerContainer
+        .append("div")
+        .classed("footer__item", true);
+
+      footerFaculty
+        .append("h5")
+        .text("Faculty");
+
+      footerFaculty
         .selectAll("p")
-        .data(d => d.faculty)
+        .data(info.faculty)
         .join("p")
         .text(d => d.name);
-      footerContainer.append("div")
-      .classed("footer__ass", true)
-      .append("h3")
-      .text("Assitants")
+
+      const footerAssistants = footerContainer
+        .append("div")
+        .classed("footer__item", true);
+
+      footerAssistants
+        .append("h5")
+        .text("Assistants");
+
+      footerAssistants
         .selectAll("p")
-        .data(d => d.assistants)
+        .data(info.assistants)
         .join("p")
         .text(d => d.name);
     })
