@@ -53,11 +53,6 @@ img {
   max-width: 100%;
 }
 
-#visualization img {
-  max-width: 100vw;
-  max-height: 85vh;
-}
-
 main.container {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -205,6 +200,14 @@ main.container > * {
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: 100vw;
+  max-height: 85vh;
+  background-color: var(--color-main-lighter);
+}
+
+#visualisation img {
+  max-width: 100vw;
+  max-height: 85vh;
 }
 
 #question-container h2,
