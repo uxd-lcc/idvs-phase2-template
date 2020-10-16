@@ -16,10 +16,9 @@ Once you downloaded the template on your machine, you have 2 options to view it 
 ### Folder structure and description
 
 #### How to read the icons
-
-##### :white_check_mark: → Replace it.
-##### :hammer: → You can edit and customize it.
-##### :no_entry_sign: → Don't touch it.
+:white_check_mark: → Replace it. //
+:hammer: → You can edit and customize it. //
+:no_entry_sign: → Don't touch it.
 
 
 :file_folder: dd16-phase2-template
@@ -50,12 +49,12 @@ cover for the homepage, the name of the question folder and information about da
 
 
 ### How to add new research questions
-Note: We suggest you to duplicate research questions step by step.
-#### Duplicate the sample folder and rename it
-#### Update the `questions.yml` by specifying the name and the index of the new research question and adding information
+:heavy_exclamation_mark: We suggest you to duplicate research questions step by step.
+- Duplicate the sample folder and rename it
+- Update the `questions.yml` by specifying the name and the index of the new research question and adding information
 
 
 ### How to edit authors’ information
-#### Add your names in the ìnfo.yml`file.
-Note: Do not change the file structure.
+- Add your names in the ìnfo.yml`file.
+:heavy_exclamation_mark: Do not change the file structure.
 
