@@ -55,6 +55,6 @@ cover for the homepage, the name of the question folder and information about da
 
 
 ### How to edit authors’ information
-- Add your names in the ìnfo.yml`file.
+- Add your names in the `ìnfo.yml` file.
 :heavy_exclamation_mark: Do not change the file structure.
 
