@@ -59,6 +59,6 @@ cover for the homepage, the name of the question folder and information about da
 ### How to edit authors’ information
 - Add your names in the `ìnfo.yml` file.
 :heavy_exclamation_mark: Do not change the file structure.
-![Add your names.](https://github.com/bea92/dd16-screen/blob/main/Screenshot%202020-10-19%20at%2018.10.10.png)
+![Add your names.](https://github.com/bea92/dd16-screen/blob/main/info.png)
 
 
