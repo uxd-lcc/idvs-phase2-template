@@ -51,14 +51,17 @@ cover for the homepage, the name of the question folder and information about da
 ### How to add new research questions
 :heavy_exclamation_mark: We suggest you to duplicate research questions step by step.
 - Duplicate the sample folder and rename it.
+--
 ![Duplicate the sample folder and rename it.](https://github.com/bea92/dd16-screen/blob/main/question_1.png)
 --
 - Update the `questions.yml` by specifying the name and the index of the new research question and adding information
+--
 ![Update the yaml file](https://github.com/bea92/dd16-screen/blob/main/question_2.png)
 
 ### How to edit authors’ information
 - Add your names in the `ìnfo.yml` file.
 :heavy_exclamation_mark: Do not change the file structure.
+--
 ![Add your names.](https://github.com/bea92/dd16-screen/blob/main/info.png)
 
 
