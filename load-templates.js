@@ -52,8 +52,7 @@ if (questions.size() > 0) {
       questionMeta.append('p').text(d => d.description);
 
       question.on("click", (e, d) => {
-        console.log(d);
-        window.location.href = "question-" + d.index;
+        window.location.href = d.folder;
       });
     }
   );

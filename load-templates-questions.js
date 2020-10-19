@@ -1,5 +1,3 @@
-console.log(window.location)
-
 const questionsNavigation = d3.select("#questions-navigation");
 if (questionsNavigation.size() > 0) {
   Promise.all([d3.text("../questions.yml")]).then(([questionsData]) => {
@@ -31,7 +29,7 @@ if (questionsNavigation.size() > 0) {
       .data(questionsData)
       .join("li")
       .append("a")
-      .attr("href", (d) => "./" + d.folder)
+      .attr("href", (d) => "../" + d.folder)
       .text((d) => d.title);
 
     questionsList.select(".navigation-handler").on("click", function () {
@@ -47,7 +45,6 @@ const datasetsContainer = d3.select("#datasets-container");
 if (datasetsContainer.size() > 0) {
   Promise.all([d3.text("../questions.yml")]).then(([questionsData]) => {
     questionsData = jsyaml.load(questionsData);
-    console.log(questionsData);
 
     // Get correct question based on location.pathname
     let pathName = window.location.pathname.split("/")
