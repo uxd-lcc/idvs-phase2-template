@@ -8,7 +8,7 @@ if (questionsNavigation.size() > 0) {
     questionsNavigation
       .append("a")
       .style("padding", "0 1rem")
-      .attr("href", "/")
+      .attr("href", "../")
       .append("h4")
       .text("Home");
 
@@ -31,7 +31,7 @@ if (questionsNavigation.size() > 0) {
       .data(questionsData)
       .join("li")
       .append("a")
-      .attr("href", (d) => "/" + d.folder)
+      .attr("href", (d) => "./" + d.folder)
       .text((d) => d.title);
 
     questionsList.select(".navigation-handler").on("click", function () {
