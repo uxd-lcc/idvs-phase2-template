@@ -84,7 +84,7 @@ if (questionsNavigation.size() > 0) {
     questionsList
       .append("ol")
       .classed("closed", true)
-      .style("height", "calc(1rem + " + questionsData.length * 20 + "px)")
+      .style("height", "calc(1rem + " + questionsData.length * 50 + "px)")
       .selectAll("li")
       .data(questionsData)
       .join("li")
@@ -93,7 +93,6 @@ if (questionsNavigation.size() > 0) {
       .text((d) => d.title);
 
     questionsList.select(".navigation-handler").on("click", function () {
-      console.log("click");
       const list = questionsList.select("ol");
       const isOpen = list.classed("closed");
       list.classed("closed", !isOpen);

@@ -2,7 +2,6 @@ const questionsNavigation = d3.select("#questions-navigation");
 if (questionsNavigation.size() > 0) {
   Promise.all([d3.text("../questions.yml")]).then(([questionsData]) => {
     questionsData = jsyaml.load(questionsData);
-
     questionsNavigation
       .append("a")
       .style("padding", "0 1rem")
@@ -24,7 +23,7 @@ if (questionsNavigation.size() > 0) {
     questionsList
       .append("ol")
       .classed("closed", true)
-      .style("height", "calc(1rem + " + questionsData.length * 20 + "px)")
+      .style("height", "calc(1rem + " + questionsData.length * 50 + "px)")
       .selectAll("li")
       .data(questionsData)
       .join("li")
