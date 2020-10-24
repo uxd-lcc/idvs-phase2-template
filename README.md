@@ -7,7 +7,7 @@ Press the green button __code__ and select __Download ZIP__.
 ![How to make local copy](https://media.giphy.com/media/4IJrlAjQ9dd6T9M3zS/source.gif)
 
 ### View it locally
-Once you downloaded the template on your machine, you have 2 options to view it locally:
+Once you downloaded the template on your machine, you have 3 options to view it locally:
 
 - Use the [atom-live-server plugin](https://atom.io/packages/atom-live-server) of [Atom](https://atom.io/)
 - Use the [live preview](https://www.raymondcamden.com/2014/01/15/Brackets-Tip-Using-Live-Preview-as-a-Web-Server) feature of [Brackets](http://brackets.io/). 
@@ -18,13 +18,14 @@ Once you downloaded the template on your machine, you have 2 options to view it 
 #### How to read the icons
 :white_check_mark: → Replace it. //
 :hammer: → You can edit and customize it. //
+:warning: → Edit very carefully. //
 :no_entry_sign: → Don't touch it.
 
 
 :file_folder: dd16-phase2-template
 - :file_folder: assets → The folder containing stylesheets, cover image and logos.
   - :file_folder: css
-    - :hammer: `custom.css` → Here you can customize colors, fonts and, if needed, you can add new classes.
+    - :hammer: `custom.css` → Here you can customize colors, fonts and add new CSS styles.
     - :no_entry_sign: `main.css` → This is the main stylesheet that customizes the whole template. Do not touch it. 
   - :white_check_mark: `cover.png` → The cover in your homepage. Replace it.
   - :no_entry_sign: `logo_poli.png` → Do not touch it.
@@ -36,11 +37,11 @@ Once you downloaded the template on your machine, you have 2 options to view it 
   - :white_check_mark: `example-mid-viz.svg` → An example of a .svg image for showing a relevant finding. Replace it.
   - :white_check_mark: `example-protocol.png` → An example of a research protocol diagram. Replace it.
   - :white_check_mark: `viz01.png` → An example of the main visualization of the research question. Replace it.
-  - :no_entry_sign: `index.html` → Don’t touch it. Unless for updating metadata and adding font via html.
+  - :warning: `index.html` → Modify only for updating metadata.
   - :hammer: `question.html` → Here you can add the html content of the research question.
 - `gitignore`
 - :white_check_mark: `favicon.ico` → You can customise the favicon by replacing it.
-- :no_entry_sign: `index.hthml` → Don’t touch it. Unless for updating metadata and adding font via html.
+- :warning: `index.hthml` → Modify only for updating metadata.
 - :hammer: `info.yml` → Here you can add: title, main description, team members. Don't change the file structure. 
 - :no_entry_sign: `load-templates.js →`Don’t touch it. This .js file generates the template according to .yml files. 
 - :hammer: `questions.yml` → Here you can add information about each research question (title, description  and 
