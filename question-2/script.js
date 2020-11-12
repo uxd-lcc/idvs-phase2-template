@@ -1,4 +1,4 @@
-console.log("question 1 script is running!")
+console.log("question 2 script is running!")
 Promise.all([d3.html("./question.html"), d3.html("./visualisation.svg")])
 .then(function([html, svgDocument]){
     // populate page with content from question.html
