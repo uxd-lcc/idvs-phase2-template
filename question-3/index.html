@@ -34,13 +34,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="../load-templates-questions.js"></script>
-    <script>
-        d3.html("./question.html").then(html=>{
-            const questionContent = d3.select(html).selectAll('body > *');
-            questionContent.each(function(d){
-                d3.select("#question-container").node().appendChild(this);
-            })
-        });
-    </script>
+    <script src="./script.js"></script>
   </body>
 </html>
