@@ -35,7 +35,7 @@ Once you downloaded and unzipped the template on your machine, you have 3 option
     - :hammer: `custom.css` → Here you can customize colors, fonts and add new CSS styles.
     - :no_entry_sign: `main.css` → This is the main stylesheet that customizes the whole template. Do not touch it.
   - :white_check_mark: `cover.png` → The cover in your homepage. Replace it.
-  - :no_entry_sign: `lcc_log.png` → Do not touch it.
+  - :no_entry_sign: `lcc_logo.png` → Do not touch it.
   - :no_entry_sign: `uxd_logo.png` → Do not touch it.
 - :file_folder: question-1 → A sample question folder. Duplicate it to create new pages for your research questions.
   - :white_check_mark: `cover.png`→ The cover of the question page. Replace it.
@@ -45,7 +45,7 @@ Once you downloaded and unzipped the template on your machine, you have 3 option
   - :white_check_mark: `viz01.png` → An example of the main visualization of the research question. Replace it.
   - :warning: `index.html` → Modify only for updating metadata.
   - :hammer: `question.html` → Here you can add the html content of the research question.
-- `gitignore`
+- :no_entry_sign: `gitignore`
 - :white_check_mark: `favicon.ico` → You can customise the favicon by replacing it.
 - :warning: `index.hthml` → Modify only for updating metadata.
 - :hammer: `info.yml` → Here you can add: title, main description, team members. Don't change the file structure.
