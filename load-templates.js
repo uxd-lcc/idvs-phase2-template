@@ -22,7 +22,7 @@ if (questions.size() > 0) {
       cover.append("div").classed("cover__background", true);
       cover
         .append("h3")
-        .text("DensityDesign Lab - Final Synthesis Design Studio 2020/2021")
+        .text("BA UXD - Interactive Data Visualisation Studio 21-22 Phase 2")
         .classed("cover__heading", true);
       cover
         .append("h1")
@@ -41,15 +41,28 @@ if (questions.size() > 0) {
         .text((d) => d.name)
         .classed("authors", true);
 
-      const introText = intro.selectAll("div").data([info]).enter().append("div");
-      introText.append("p").text(d => d.description);
+      const introText = intro
+        .selectAll("div")
+        .data([info])
+        .enter()
+        .append("div");
+      introText.append("p").text((d) => d.description);
 
-      const question =
-        questions.selectAll('div').data(questionsData).enter().append('div').classed("question__card", true);
-      question.append('h2').text(d => d.index + ". " + d.title).classed("question__title", true);
-      question.append('img').attr('src', d => `./${d.folder}/${d.cover}`);
-      const questionMeta = question.append("div").classed("question__info", true);
-      questionMeta.append('p').text(d => d.description);
+      const question = questions
+        .selectAll("div")
+        .data(questionsData)
+        .enter()
+        .append("div")
+        .classed("question__card", true);
+      question
+        .append("h2")
+        .text((d) => d.index + ". " + d.title)
+        .classed("question__title", true);
+      question.append("img").attr("src", (d) => `./${d.folder}/${d.cover}`);
+      const questionMeta = question
+        .append("div")
+        .classed("question__info", true);
+      questionMeta.append("p").text((d) => d.description);
 
       question.on("click", (e, d) => {
         window.location.href = d.folder;
@@ -103,70 +116,68 @@ if (questionsNavigation.size() > 0) {
 const footer = d3.select(".footer");
 if (footer.size() > 0) {
   // Footer //
-  Promise.all([
-      d3.text('./info.yml')
-    ])
-    .then(([info]) => {
-      info = jsyaml.load(info);
-      const footerContainer = footer
-        .append("div")
-        .classed("footer__container", true);
+  Promise.all([d3.text("./info.yml")]).then(([info]) => {
+    info = jsyaml.load(info);
+    const footerContainer = footer
+      .append("div")
+      .classed("footer__container", true);
 
-      const footerLogo1 = footerContainer
-        .append("div")
-        .classed("footer__item", true)
-        .append("div")
-        .classed("logo logo-density", true);
+    const footerLogo1 = footerContainer
+      .append("div")
+      .classed("footer__item course", true)
+      .append("div")
+      .classed("logo logo-course", true);
 
-      const footerLogo2 = footerContainer
-        .append("div")
-        .classed("footer__item", true)
-        .append("div")
-        .classed("logo logo-politecnico", true);
+    footerLogo1.attr("style", (d) => {
+      `background-image: url(./assets/${info["logoCourse"]})`;
+    });
 
-      const footerAuthors = footerContainer
-        .append("div")
-        .classed("footer__item", true);
+    const footerLogo2 = footerContainer
+      .append("div")
+      .classed("footer__item institute", true)
+      .append("div")
+      .classed("logo logo-institute", true);
 
-      footerAuthors
-        .append("h5")
-        .text("Project by");
+    footerLogo2.attr("style", (d) => {
+      `background-image: url(./assets/${info["logoInstitute"]})`;
+    });
 
-      footerAuthors
-        .selectAll("p")
-        .data(info.authors)
-        .join("p")
-        .text(d => d.name);
+    const footerAuthors = footerContainer
+      .append("div")
+      .classed("footer__item authors", true);
 
+    footerAuthors.append("h5").text("Project by");
 
-      const footerFaculty = footerContainer
-        .append("div")
-        .classed("footer__item", true);
+    footerAuthors
+      .selectAll("p")
+      .data(info.authors)
+      .join("p")
+      .text((d) => d.name);
 
-      footerFaculty
-        .append("h5")
-        .text("Faculty");
+    const footerFaculty = footerContainer
+      .append("div")
+      .classed("footer__item faculty", true);
 
-      footerFaculty
-        .selectAll("p")
-        .data(info.faculty)
-        .join("p")
-        .text(d => d.name);
+    footerFaculty.append("h5").text("Faculty");
 
-      const footerAssistants = footerContainer
-        .append("div")
-        .classed("footer__item", true);
+    footerFaculty
+      .selectAll("p")
+      .data(info.faculty)
+      .join("p")
+      .text((d) => d.name);
 
-      footerAssistants
-        .append("h5")
-        .text("Assistants");
+    // const footerAssistants = footerContainer
+    //   .append("div")
+    //   .classed("footer__item", true);
 
-      footerAssistants
-        .selectAll("p")
-        .data(info.assistants)
-        .join("p")
-        .text(d => d.name);
-    })
+    // footerAssistants
+    //   .append("h5")
+    //   .text("Assistants");
 
-
+    // footerAssistants
+    //   .selectAll("p")
+    //   .data(info.assistants)
+    //   .join("p")
+    //   .text(d => d.name);
+  });
 }

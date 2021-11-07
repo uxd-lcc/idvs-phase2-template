@@ -1,7 +1,7 @@
 html {
   --color-main: #007aff;
   --color-text: #333333;
-  --color-text-lighter: #DDDDDD;
+  --color-text-lighter: #dddddd;
   --color-background: #fbfbfd;
   --font-display: "DM Sans", sans-serif;
   --font-text: "Crimson Pro", serif;
@@ -211,7 +211,6 @@ main.container > * {
   max-height: 85vh;
 }
 
-
 #question-container h2,
 h2 {
   text-transform: uppercase;
@@ -370,25 +369,46 @@ h2 {
 
 .footer__container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  column-gap:1rem;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 1rem;
+  grid-template-areas:
+    "logo1 logo1 authors faculty"
+    "logo2 logo2 authors faculty";
 }
 
 .footer__item .logo {
   background-size: contain;
-    background-position: top left;
-    background-repeat: no-repeat;
-    display: block;
-    width: 100%;
-    height: 75px;
+  background-position: top left;
+  background-repeat: no-repeat;
+  display: block;
+  width: 100%;
+  height: 75px;
 }
 
-.logo-density {
-  background-image: url(../logo_density.png);
+.logo-course {
+  background-image: url(../uxd_logo.png);
 }
 
-.logo-politecnico {
-  background-image: url(../logo_poli.png);
+.logo-institute {
+  background-image: url(../lcc_logo.png);
+  align-self: end;
+}
+
+.course {
+  grid-area: logo1;
+}
+
+.institute {
+  display: flex;
+  grid-area: logo2;
+}
+
+.authors {
+  grid-area: authors;
+}
+
+.faculty {
+  grid-area: faculty;
 }
 
 @media (max-width: 812px) {
