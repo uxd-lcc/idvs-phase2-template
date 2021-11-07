@@ -1,5 +1,7 @@
+This template has been forked & adapted from [Density Design Lab's own version](https://github.com/densitydesign/dd16-phase2-template).  
+
 # Hello!
-## This is the html template for your DD16 Phase2.
+## This is the html template for your IDVS Phase2.
 Here is how to work with it.
 
 ### Make your copy
@@ -7,10 +9,10 @@ Press the green button __code__ and select __Download ZIP__.
 ![How to make local copy](https://media.giphy.com/media/4IJrlAjQ9dd6T9M3zS/source.gif)
 
 ### View it locally
-Once you downloaded the template on your machine, you have 3 options to view it locally:
+Once you downloaded and unzipped the template on your machine, you have 3 options to view it locally:
 
-- Use the [atom-live-server plugin](https://atom.io/packages/atom-live-server) of [Atom](https://atom.io/)
-- Use the [live preview](https://www.raymondcamden.com/2014/01/15/Brackets-Tip-Using-Live-Preview-as-a-Web-Server) feature of [Brackets](http://brackets.io/). 
+- Drag the directory into [VS Code](https://code.visualstudio.com/) to open it as a project. Then install and use the [live server extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).
+- Drag the directory into [Atom](https://atom.io/) to open it as a project. Then install and use the [atom-live-server plugin](https://atom.io/packages/atom-live-server). 
 - Open the project folder in Terminal and run a [Python Simple Server](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server)
 
 ### Folder structure and description
@@ -63,6 +65,6 @@ cover for the homepage, the name of the question folder and information about da
 - Add your names in the `ìnfo.yml` file.
 :heavy_exclamation_mark: Do not change the file structure.
 --
-![Add your names.](https://github.com/bea92/dd16-screen/blob/main/info.png)
+<!-- ![Add your names.](https://github.com/bea92/dd16-screen/blob/main/info.png) -->
 
 
