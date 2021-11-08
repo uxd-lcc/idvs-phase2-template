@@ -165,19 +165,5 @@ if (footer.size() > 0) {
       .data(info.faculty)
       .join("p")
       .text((d) => d.name);
-
-    // const footerAssistants = footerContainer
-    //   .append("div")
-    //   .classed("footer__item", true);
-
-    // footerAssistants
-    //   .append("h5")
-    //   .text("Assistants");
-
-    // footerAssistants
-    //   .selectAll("p")
-    //   .data(info.assistants)
-    //   .join("p")
-    //   .text(d => d.name);
   });
 }

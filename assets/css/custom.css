@@ -1,9 +1,144 @@
 html {
   --color-main: #403eff;
-  --color-main-lighter: #C3C2FF;
+  --color-main-lighter: #c3c2ff;
   --color-text: #333333;
-  --color-text-lighter: #AAAAAA;
-  --color-background: #FBFBFD;
-  --font-display: 'Commissioner', sans-serif;
-  --font-text: 'Commissioner', sans-serif;
+  --color-text-lighter: #aaaaaa;
+  --color-background: #fbfbfd;
+  --font-display: "Commissioner", sans-serif;
+  --font-text: "Commissioner", sans-serif;
+}
+
+#plastic-map-container {
+  position: relative;
+  background: #0000ff;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+#plastic-map-container svg {
+  height: 100%;
+  width: 100%;
+  stroke-width: 0.2;
+}
+
+#plastic-map-container svg path {
+  fill: #ddd;
+  pointer-events: none;
+}
+
+#plastic-map-container svg.focussed path {
+  fill: rgb(112, 112, 112);
+}
+
+#plastic-map-container button.activate {
+  position: absolute;
+}
+
+#plastic-map-container g path:hover {
+  stroke: #fff;
+  stroke-width: 1px;
+}
+
+#plastic-map-container .active-1 path,
+#plastic-map-container path.active-1 {
+  fill: rgb(254, 217, 118);
+  pointer-events: auto;
+}
+#plastic-map-container .active-2 path,
+#plastic-map-container path.active-2 {
+  fill: rgb(254, 178, 76);
+  pointer-events: auto;
+}
+#plastic-map-container .active-3 path,
+#plastic-map-container path.active-3 {
+  fill: rgb(253, 141, 60);
+  pointer-events: auto;
+}
+#plastic-map-container .active-4 path,
+#plastic-map-container path.active-4 {
+  fill: rgb(252, 78, 42);
+  pointer-events: auto;
+}
+#plastic-map-container .active-5 path,
+#plastic-map-container path.active-5 {
+  fill: rgb(227, 26, 28);
+  pointer-events: auto;
+}
+
+#plastic-map-container header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
+#plastic-map-container .info {
+  border-radius: 15px;
+  color: white;
+  left: 50%;
+  pointer-events: none;
+  position: absolute;
+  margin: 0 auto;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#plastic-map-container .info p {
+  width: 100%;
+  font-family: "VG5000", sans-serif;
+  font-size: 12vw;
+  font-weight: bold;
+  line-height: 1em;
+  margin: 0;
+  text-shadow: 2px 2px #ff0000;
+}
+
+#plastic-map-container .info p span {
+  font-size: 3vw;
+  white-space: nowrap;
+}
+
+@font-face {
+  font-family: "VG5000";
+  font-style: normal;
+  src: url("https://assets.codepen.io/753366/VG5000-Regular_web.woff2")
+      format("woff2"),
+    url("https://assets.codepen.io/753366/VG5000-Regular_web.woff")
+      format("woff");
+}
+
+#plastic-map-container footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+}
+
+.key {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+}
+
+.data-class {
+  height: 10px;
+  width: 45px;
+  border: 1px white solid;
+}
+
+.data-class-1 {
+  background: rgb(254, 217, 118);
+}
+.data-class-2 {
+  background: rgb(254, 178, 76);
+}
+.data-class-3 {
+  background: rgb(253, 141, 60);
+}
+.data-class-4 {
+  background: rgb(252, 78, 42);
+}
+.data-class-5 {
+  background: rgb(227, 26, 28);
 }
