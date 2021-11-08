@@ -66,6 +66,47 @@ Once you downloaded and unzipped the template on your machine, you have 3 option
 ### How to edit authors’ information
 
 - Add your names in the `ìnfo.yml` file.
-:heavy_exclamation_mark: Do not change the file structure.
+  :heavy_exclamation_mark: Do not change the file structure.
+
 --
+
 <!-- ![Add your names.](https://github.com/bea92/dd16-screen/blob/main/info.png) -->
+
+### Examples included
+
+Each of the 3 included questions is a different usage example.
+
+#### Question 1
+
+- `question-1/question.html`
+  This contains an SVG within the file itself, opposed to be loaded from a seperate `.svg` file.
+  It also contains other HTML that creates the rest of the page (images, text, etc).
+
+- `assets/custom.css`
+  You can add custom CSS to this file which will affect the SVG. This file is shared across all questions. We need to be careful that CSS from one question doesn't conflict with other questions or what is inside `main.css`.
+
+- `question-1/script.js`
+  Here you can include plain/vanilla JS (i.e. no library used) here to modify the SVG and make it interactive.
+
+#### Question 2
+
+This loads an _SVG file_ (`visualisation.svg`) into the page. It also includes the D3.js library so you can control and manipulate it.
+
+- `question-2/question.html`
+  This file contains the HTML that creates the main content of the page (images, text, etc). The SVG is automatically loaded into:
+
+  ```
+  <div id="visualisation">
+    <!-- leave me empty -->
+  </div>
+  ```
+
+- `question-2/script.js`
+  In this files you can include your D3.js code to modify the SVG and make it interactive.
+
+#### Question 3
+
+This example includes a YouTube embed. Showing that you can do more than just use Data Visualisations and SVGs within this report.
+
+- `question-3/question.html`
+  Contains the HTML embed (usually an iframe) that you can get from YouTube, Vimeo, etc.
