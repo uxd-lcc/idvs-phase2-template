@@ -1,4 +1,4 @@
-console.log("question 1 script is running!");
+console.log("question 1 script is running! (SVG with CSS/JS example)");
 Promise.all([d3.html("./question.html")]).then(function ([html, svgDocument]) {
   // populate page with content from question.html
   const questionContent = d3.select(html).selectAll("body > *");
@@ -6,6 +6,9 @@ Promise.all([d3.html("./question.html")]).then(function ([html, svgDocument]) {
     d3.select("#question-container").node().appendChild(this);
   });
 
+  /******************************
+   *  Edit below this line only * 
+  /******************************/
   const data = [
     {
       country: "India",
