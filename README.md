@@ -41,7 +41,7 @@ Once you downloaded and unzipped the template on your machine, you have 3 option
   - :file_folder: js
     - :no_entry_sign: `utils.js` → Do not touch it.
     - :no_entry_sign: `d3.v4.js` → Do not touch it.
-- :file_folder: question-1 → A sample question folder. Duplicate it to create new pages for your research questions. (See [below for more](#examples-included))
+- :file_folder: question-1 → A sample question folder. Duplicate it to create new pages for your research questions. (See [below for more](#question-examples-included))
   - :file_folder: img
     - :white_check_mark: `cover.png`→ The cover of the question page. Replace it.
     - :white_check_mark: `example-finding.png` → An example of a .png image for showing a relevant finding. Replace it.
