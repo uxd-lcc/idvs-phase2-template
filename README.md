@@ -41,7 +41,7 @@ Once you downloaded and unzipped the template on your machine, you have 3 option
   - :file_folder: js
     - :no_entry_sign: `utils.js` → Do not touch it.
     - :no_entry_sign: `d3.v4.js` → Do not touch it.
-- :file_folder: question-1,2,3 → A sample question folder. Duplicate it to create new pages for your research questions. Read to the bottom to see the 3 different examples.
+- :file_folder: question-1 → A sample question folder. Duplicate it to create new pages for your research questions. (See [below for more](#examples-included))
   - :file_folder: img
     - :white_check_mark: `cover.png`→ The cover of the question page. Replace it.
     - :white_check_mark: `example-finding.png` → An example of a .png image for showing a relevant finding. Replace it.
@@ -81,7 +81,7 @@ Once you downloaded and unzipped the template on your machine, you have 3 option
 
 <!-- ![Add your names.](https://github.com/bea92/dd16-screen/blob/main/info.png) -->
 
-### Examples included
+### Question examples included
 
 Each of the 3 included questions is a different usage example.
 
@@ -94,7 +94,7 @@ Each of the 3 included questions is a different usage example.
 - `assets/custom.css`
   You can add custom CSS to this file which will affect the SVG. This file is shared across all questions. We need to be careful that CSS from one question doesn't conflict with other questions or what is inside `main.css`.
 
-- `question-1/script.js`
+- `question-1/js/script.js`
   Here you can include plain/vanilla JS (i.e. no library used) here to modify the SVG and make it interactive.
 
 #### Question 2
@@ -102,16 +102,22 @@ Each of the 3 included questions is a different usage example.
 This loads an _SVG file_ (`visualisation.svg`) into the page. It also includes the D3.js library so you can control and manipulate it.
 
 - `question-2/question.html`
-  This file contains the HTML that creates the main content of the page (images, text, etc). The SVG is automatically loaded into:
+  This file contains the HTML that creates the main content of the page (images, text, etc). You can draw your visualisations into this using D3. You can add HTML elements above the `#visualisation` div. The included D3.js code is from Llewelyn's example: [5a. Circles with Transitions](https://github.com/lewfer/d3si/tree/master/05a.%20Circles%20with%20Transition).
 
   ```
-  <div id="visualisation">
-    <!-- leave me empty -->
+  <div>
+    <button>Click me</button>
+    <div id="visualisation">
+      <!-- leave me empty -->
+    </div>
   </div>
   ```
 
-- `question-2/script.js`
+- `question-1/js/script.js`
   In this files you can include your D3.js code to modify the SVG and make it interactive.
+
+- `question-1/js/circle.js`
+  This file is also loaded in. It replicates the way Llewelyn's examples work.
 
 #### Question 3
 
