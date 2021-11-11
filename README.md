@@ -116,7 +116,7 @@ This loads an _SVG file_ (`visualisation.svg`) into the page. It also includes t
 - `question-1/js/script.js`
   In this files you can include your D3.js code to modify the SVG and make it interactive.
 
-- `question-1/js/circle.js`
+- `question-1/js/circles.js`
   This file is also loaded in. It replicates the way Llewelyn's examples work.
 
 #### Question 3
