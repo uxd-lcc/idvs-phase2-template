@@ -4,76 +4,84 @@ const home = d3.select(".cover");
 const intro = d3.select(".intro");
 
 const questions = d3.select("#questions");
+
+function getTextAsync(url) {
+  return new Promise(function (resolve, reject) {
+    d3.request(url)
+      .mimeType("text/plain")
+      .response(function (xhr) {
+        return xhr.responseText;
+      })
+      .get(resolve);
+  });
+}
+
 if (questions.size() > 0) {
-  Promise.all([d3.text("info.yml"), d3.text("./questions.yml")]).then(
-    ([info, questionsData]) => {
-      info = jsyaml.load(info);
-      questionsData = jsyaml.load(questionsData);
+  Promise.all([
+    getTextAsync("./info.yml"),
+    getTextAsync("./questions.yml"),
+  ]).then(([info, questionsData]) => {
+    info = jsyaml.load(info);
+    questionsData = jsyaml.load(questionsData);
+    const cover = home.selectAll("div").data([info]).enter().append("div");
 
-      const cover = home.selectAll("div").data([info]).enter().append("div");
+    cover
+      .append("div")
+      .attr(
+        "style",
+        (d) => `background-image: url(./assets/img/${d["cover-image"]})`
+      )
+      .classed("cover__image", true);
+    cover.append("div").classed("cover__background", true);
+    cover
+      .append("h3")
+      .text("BA UXD - Interactive Data Visualisation Studio 21-22 Phase 2")
+      .classed("cover__heading", true);
+    cover
+      .append("h1")
+      .text((d) => d.title)
+      .classed("cover__title", true);
+    cover
+      .append("h2")
+      .text((d) => d.subtitle)
+      .classed("cover__subtitle", true);
 
-      cover
-        .append("div")
-        .attr(
-          "style",
-          (d) => `background-image: url(./assets/${d["cover-image"]})`
-        )
-        .classed("cover__image", true);
-      cover.append("div").classed("cover__background", true);
-      cover
-        .append("h3")
-        .text("BA UXD - Interactive Data Visualisation Studio 21-22 Phase 2")
-        .classed("cover__heading", true);
-      cover
-        .append("h1")
-        .text((d) => d.title)
-        .classed("cover__title", true);
-      cover
-        .append("h2")
-        .text((d) => d.subtitle)
-        .classed("cover__subtitle", true);
+    cover
+      .append("div")
+      .selectAll("p")
+      .data((d) => d.authors)
+      .enter()
+      .append("p")
+      .text((d) => d.name)
+      .classed("authors", true);
 
-      cover
-        .append("div")
-        .selectAll("p")
-        .data((d) => d.authors)
-        .join("p")
-        .text((d) => d.name)
-        .classed("authors", true);
+    const introText = intro.selectAll("div").data([info]).enter().append("div");
+    introText.append("p").text((d) => d.description);
 
-      const introText = intro
-        .selectAll("div")
-        .data([info])
-        .enter()
-        .append("div");
-      introText.append("p").text((d) => d.description);
+    const question = questions
+      .selectAll("div")
+      .data(questionsData)
+      .enter()
+      .append("a")
+      .attr("href", (d) => "./" + d.folder)
+      .classed("question__card", true);
+    question
+      .append("h2")
+      .text((d) => d.index + ". " + d.title)
+      .classed("question__title", true);
+    question.append("img").attr("src", (d) => `./${d.folder}/img/${d.cover}`);
+    const questionMeta = question.append("div").classed("question__info", true);
+    questionMeta.append("p").text((d) => d.description);
 
-      const question = questions
-        .selectAll("div")
-        .data(questionsData)
-        .enter()
-        .append("div")
-        .classed("question__card", true);
-      question
-        .append("h2")
-        .text((d) => d.index + ". " + d.title)
-        .classed("question__title", true);
-      question.append("img").attr("src", (d) => `./${d.folder}/${d.cover}`);
-      const questionMeta = question
-        .append("div")
-        .classed("question__info", true);
-      questionMeta.append("p").text((d) => d.description);
-
-      question.on("click", (e, d) => {
-        window.location.href = d.folder;
-      });
-    }
-  );
+    question.on("click", (e, d) => {
+      window.location.href = d.folder;
+    });
+  });
 }
 
 const questionsNavigation = d3.select("#questions-navigation");
 if (questionsNavigation.size() > 0) {
-  Promise.all([d3.text("./questions.yml")]).then(([questionsData]) => {
+  Promise.all([getTextAsync("./questions.yml")]).then(([questionsData]) => {
     questionsData = jsyaml.load(questionsData);
 
     questionsNavigation
@@ -100,7 +108,8 @@ if (questionsNavigation.size() > 0) {
       .style("height", "calc(1rem + " + questionsData.length * 50 + "px)")
       .selectAll("li")
       .data(questionsData)
-      .join("li")
+      .enter()
+      .append("li")
       .append("a")
       .attr("href", (d) => "./" + d.folder)
       .text((d) => d.title);
@@ -116,7 +125,7 @@ if (questionsNavigation.size() > 0) {
 const footer = d3.select(".footer");
 if (footer.size() > 0) {
   // Footer //
-  Promise.all([d3.text("./info.yml")]).then(([info]) => {
+  Promise.all([getTextAsync("./info.yml")]).then(([info]) => {
     info = jsyaml.load(info);
     const footerContainer = footer
       .append("div")
@@ -129,7 +138,7 @@ if (footer.size() > 0) {
       .classed("logo logo-course", true);
 
     footerLogo1.attr("style", (d) => {
-      `background-image: url(./assets/${info["logoCourse"]})`;
+      `background-image: url(./assets/img/${info["logoCourse"]})`;
     });
 
     const footerLogo2 = footerContainer
@@ -139,7 +148,7 @@ if (footer.size() > 0) {
       .classed("logo logo-institute", true);
 
     footerLogo2.attr("style", (d) => {
-      `background-image: url(./assets/${info["logoInstitute"]})`;
+      `background-image: url(./assets/img/${info["logoInstitute"]})`;
     });
 
     const footerAuthors = footerContainer
@@ -151,7 +160,8 @@ if (footer.size() > 0) {
     footerAuthors
       .selectAll("p")
       .data(info.authors)
-      .join("p")
+      .enter()
+      .append("p")
       .text((d) => d.name);
 
     const footerFaculty = footerContainer
@@ -163,7 +173,8 @@ if (footer.size() > 0) {
     footerFaculty
       .selectAll("p")
       .data(info.faculty)
-      .join("p")
+      .enter()
+      .append("p")
       .text((d) => d.name);
   });
 }

@@ -1,7 +1,7 @@
 console.log("question 1 script is running! (SVG with CSS/JS example)");
-Promise.all([d3.html("./question.html")]).then(function ([html, svgDocument]) {
+Promise.all([getHtmlAsync("./question.html")]).then(function ([html]) {
   // populate page with content from question.html
-  const questionContent = d3.select(html).selectAll("body > *");
+  const questionContent = d3.select(html).selectAll("#inner-container > *");
   questionContent.each(function (d) {
     d3.select("#question-container").node().appendChild(this);
   });

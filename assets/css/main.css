@@ -196,6 +196,10 @@ main.container > * {
   font-size: 3rem;
 }
 
+#hero {
+  min-height: 85vh;
+}
+
 #hero,
 #visualisation {
   grid-column: 1 / span 6;
@@ -203,7 +207,6 @@ main.container > * {
   display: flex;
   justify-content: center;
   max-width: 100vw;
-  min-height: 85vh;
 }
 
 #hero.embed {
@@ -403,11 +406,11 @@ h2 {
 }
 
 .logo-course {
-  background-image: url(../uxd_logo.png);
+  background-image: url(../img/uxd_logo.png);
 }
 
 .logo-institute {
-  background-image: url(../lcc_logo.png);
+  background-image: url(../img/lcc_logo.png);
   align-self: end;
 }
 

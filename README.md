@@ -34,17 +34,26 @@ Once you downloaded and unzipped the template on your machine, you have 3 option
   - :file_folder: css
     - :hammer: `custom.css` → Here you can customize colors, fonts and add new CSS styles.
     - :no_entry_sign: `main.css` → This is the main stylesheet that customizes the whole template. Do not touch it.
-  - :white_check_mark: `cover.png` → The cover in your homepage. Replace it.
-  - :no_entry_sign: `lcc_logo.png` → Do not touch it.
-  - :no_entry_sign: `uxd_logo.png` → Do not touch it.
-- :file_folder: question-1 → A sample question folder. Duplicate it to create new pages for your research questions.
-  - :white_check_mark: `cover.png`→ The cover of the question page. Replace it.
-  - :white_check_mark: `example-finding.png` → An example of a .png image for showing a relevant finding. Replace it.
-  - :white_check_mark: `example-mid-viz.svg` → An example of a .svg image for showing a relevant finding. Replace it.
-  - :white_check_mark: `example-protocol.png` → An example of a research protocol diagram. Replace it.
-  - :white_check_mark: `viz01.png` → An example of the main visualization of the research question. Replace it.
-  - :warning: `index.html` → Modify only for updating metadata.
-  - :hammer: `question.html` → Here you can add the html content of the research question.
+  - :file_folder: img
+    - :white_check_mark: `cover.png` → The cover in your homepage. Replace it.
+    - :no_entry_sign: `lcc_logo.png` → Do not touch it.
+    - :no_entry_sign: `uxd_logo.png` → Do not touch it.
+  - :file_folder: js
+    - :no_entry_sign: `utils.js` → Do not touch it.
+    - :no_entry_sign: `d3.v4.js` → Do not touch it.
+- :file_folder: question-1,2,3 → A sample question folder. Duplicate it to create new pages for your research questions. Read to the bottom to see the 3 different examples.
+  - :file_folder: img
+    - :white_check_mark: `cover.png`→ The cover of the question page. Replace it.
+    - :white_check_mark: `example-finding.png` → An example of a .png image for showing a relevant finding. Replace it.
+    - :white_check_mark: `example-mid-viz.svg` → An example of a .svg image for showing a relevant finding. Replace it.
+    - :white_check_mark: `example-protocol.png` → An example of a research protocol diagram. Replace it.
+    - :white_check_mark: `viz01.png` → An example of the main visualization of the research question. Replace it.
+  - :file_folder: js → Content depends on which example question
+    - :hammer: `script.js` → You can add your own JavaScript here. Be cautious where you put your own JS. Read the comments in the file.
+    - :hammer: `circle.js` → If this exists you can add your own JS here. Refer to [Llewelyn's examples](https://github.com/lewfer/d3si).
+    - :no_entry_sign: `d3si.js` → Do not touch
+  - :warning: `index.html` → Modify only for updating metadata only.
+  - :hammer: `question.html` → Here you can add the html content of the research question. Make sure you leave the `.inner-container` div.
 - :no_entry_sign: `gitignore`
 - :white_check_mark: `favicon.ico` → You can customise the favicon by replacing it.
 - :warning: `index.hthml` → Modify only for updating metadata.

@@ -1,6 +1,6 @@
 const questionsNavigation = d3.select("#questions-navigation");
 if (questionsNavigation.size() > 0) {
-  Promise.all([d3.text("../questions.yml")]).then(([questionsData]) => {
+  Promise.all([getTextAsync("../questions.yml")]).then(([questionsData]) => {
     questionsData = jsyaml.load(questionsData);
     questionsNavigation
       .append("a")
@@ -26,7 +26,8 @@ if (questionsNavigation.size() > 0) {
       .style("height", "calc(1rem + " + questionsData.length * 50 + "px)")
       .selectAll("li")
       .data(questionsData)
-      .join("li")
+      .enter()
+      .append("li")
       .append("a")
       .attr("href", (d) => "../" + d.folder)
       .text((d) => d.title);
@@ -42,7 +43,7 @@ if (questionsNavigation.size() > 0) {
 
 const datasetsContainer = d3.select("#datasets-container");
 if (datasetsContainer.size() > 0) {
-  Promise.all([d3.text("../questions.yml")]).then(([questionsData]) => {
+  Promise.all([getTextAsync("../questions.yml")]).then(([questionsData]) => {
     questionsData = jsyaml.load(questionsData);
 
     // Get correct question based on location.pathname
@@ -58,7 +59,9 @@ if (datasetsContainer.size() > 0) {
       .classed("datasets", true)
       .selectAll("li")
       .data(datasetsData)
-      .join("li");
+      .enter()
+      .append("li");
+    // .join("li");
 
     const titleDownload = datasets
       .append("span")
@@ -95,7 +98,7 @@ if (datasetsContainer.size() > 0) {
 const footer = d3.select(".footer");
 if (footer.size() > 0) {
   // Footer //
-  Promise.all([d3.text("../info.yml")]).then(([info]) => {
+  Promise.all([getTextAsync("../info.yml")]).then(([info]) => {
     info = jsyaml.load(info);
     const footerContainer = footer
       .append("div")
@@ -108,7 +111,7 @@ if (footer.size() > 0) {
       .classed("logo logo-course", true);
 
     footerLogo1.attr("style", (d) => {
-      `background-image: url(./assets/${info["logoCourse"]})`;
+      `background-image: url(./assets/img/${info["logoCourse"]})`;
     });
 
     const footerLogo2 = footerContainer
@@ -118,7 +121,7 @@ if (footer.size() > 0) {
       .classed("logo logo-institute", true);
 
     footerLogo2.attr("style", (d) => {
-      `background-image: url(./assets/${info["logoInstitute"]})`;
+      `background-image: url(./assets/img/${info["logoInstitute"]})`;
     });
 
     const footerAuthors = footerContainer
@@ -130,7 +133,8 @@ if (footer.size() > 0) {
     footerAuthors
       .selectAll("p")
       .data(info.authors)
-      .join("p")
+      .enter()
+      .append("p")
       .text((d) => d.name);
 
     const footerFaculty = footerContainer
@@ -142,7 +146,8 @@ if (footer.size() > 0) {
     footerFaculty
       .selectAll("p")
       .data(info.faculty)
-      .join("p")
+      .enter()
+      .append("p")
       .text((d) => d.name);
   });
 }
