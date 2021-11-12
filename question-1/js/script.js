@@ -1303,7 +1303,6 @@ Promise.all([getHtmlAsync("./question.html")]).then(function ([html]) {
         `#plastic-map-container #${country.code_2.toLowerCase()}`
       );
       const kgClass = Math.min(Math.ceil(country.plastic_waste * 10), 5);
-      console.log(path);
       path?.classList.toggle(`active-${kgClass}`);
     });
   };
