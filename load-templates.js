@@ -72,10 +72,6 @@ if (questions.size() > 0) {
     question.append("img").attr("src", (d) => `./${d.folder}/img/${d.cover}`);
     const questionMeta = question.append("div").classed("question__info", true);
     questionMeta.append("p").text((d) => d.description);
-
-    question.on("click", (e, d) => {
-      window.location.href = d.folder;
-    });
   });
 }
 
